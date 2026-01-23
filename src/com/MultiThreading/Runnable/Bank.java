@@ -27,9 +27,9 @@ public class Bank {
         Callable<Integer> task2=()->b1.withdraw(80);
         Callable<Integer> task3=()->b1.withdraw(10);
 
-        Future future=executorService.submit(task1);
-        Future future1=executorService.submit(task2);
-        Future future2=executorService.submit(task3);
+        Future<Integer> future=executorService.submit(task1);
+        Future<Integer> future1=executorService.submit(task2);
+        Future<Integer> future2=executorService.submit(task3);
 
         System.out.println(future.get());
         System.out.println(future1.get());
