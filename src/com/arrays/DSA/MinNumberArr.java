@@ -2,7 +2,8 @@ package com.arrays.DSA;
 
 public class MinNumberArr {
     static void main(String[] args) {
-        reverseArr();
+        int arr[] = {1, 2, 3, 4, 5};
+        extremeEnd(arr);
     }
 
     static int minValue(int... arr) {
@@ -15,19 +16,37 @@ public class MinNumberArr {
         }
         return minvalue;
     }
-    static void reverseArr(int...arr){
-        int left=0;
-        int right=arr.length;
-        while(left<=right){
-//            swap(arr[left],arr[right]);
+
+    static void reverseArr(int... arr) {
+        int left = 0;
+        int right = arr.length - 1;
+        while (left < right) {
+            swap(arr, left, right);
             left++;
             right--;
         }
     }
-//    static int swap(int a,int b){
-//        int temp=a;
-//        a=b;
-//        b=temp;
-//        return
-//    }
+
+    static void swap(int arr[], int a, int b) {
+        int temp = arr[a];
+        arr[a] = arr[b];
+        arr[b] = temp;
+    }
+
+    static void extremeEnd(int... arr) {
+        int left = 0;
+        int right = arr.length-1;
+        while (left <= right) {
+            if (left == right){
+                System.out.println(arr[left]);
+            }
+            else{
+                System.out.println(arr[left]);
+                System.out.println(arr[right]);
+            }
+            left++;
+            right--;
+        }
+    }
+
 }
